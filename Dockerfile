@@ -1,21 +1,21 @@
 FROM  openjdk:11
 #FROM java:8u111-jre
-# Mule installation:
-
 
 ENV MULE_VERSION=4.4.0
 #Add mule runtime in Docker Container
 ENV MULE_HOME /opt/mule
 
-#https://developer.mulesoft.com/download-mule-esb-runtime
-ADD mule-ee-distribution-standalone-4.4.0-20230217.zip /opt
-#ADD test-muleapp.jar /opt
+#ADD mule-ee-distribution-standalone-4.4.0-20230217.zip /opt
+
+# Mule installation:
+# Download the distribution and store it into the folder
+RUN wget -P /opt/ https://repository-master.mulesoft.org/nexus/service/local/repositories/releases/content/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip
 
 
 RUN set -x   	\
                 && cd /opt \
-				&& unzip mule-ee-distribution-standalone-4.4.0-20230217 \
-				&& mv mule-enterprise-standalone-4.4.0-20230217 mule \
+				&& unzip mule-standalone-4.4.0 \
+				&& mv mule-standalone-4.4.0 mule \
 				&& $MULE_HOME/bin/mule -installLicense $MULE_HOME/conf/$LICENSE_FILE
 
 WORKDIR $MULE_HOME
