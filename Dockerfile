@@ -16,7 +16,7 @@ RUN set -x   	\
                 && cd /opt \
 				&& unzip mule-standalone-4.4.0 \
 				&& mv mule-standalone-4.4.0 mule \
-#				&& $MULE_HOME/bin/mule -installLicense $MULE_HOME/conf/$LICENSE_FILE
+				&& $MULE_HOME/bin/mule -installLicense $MULE_HOME/conf/$LICENSE_FILE
 
 WORKDIR $MULE_HOME
 
@@ -72,6 +72,8 @@ EXPOSE 8091
 # Start Mule runtime
 #CMD echo "------ Start Mule runtime --------"
 #ENTRYPOINT ["./bin/mule"]
+
+RUN $MULE_HOME/bin/mule stop
 
 # Environment and execution:
 #CMD ["/opt/mule/bin/mule", "-M-Dmule.agent.enabled=false"]
