@@ -73,5 +73,7 @@ EXPOSE 8091
 CMD echo "------ Start Mule runtime --------"
 ENTRYPOINT ["./bin/mule"]
 
+RUN $MULE_HOME/bin/mule stop
+
 # Environment and execution:
 #CMD ["/opt/mule/bin/mule", "-M-Dmule.agent.enabled=false"]
