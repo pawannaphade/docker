@@ -71,7 +71,7 @@ EXPOSE 8091
 
 # Start Mule runtime
 CMD echo "------ Start Mule runtime --------"
-# ENTRYPOINT ["./bin/mule"]
+ENTRYPOINT ["./bin/mule"]
 
 #CMD exec $MULE_HOME/bin/mule stop
 
