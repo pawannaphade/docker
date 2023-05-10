@@ -15,8 +15,8 @@ RUN wget -P /opt/ https://repository-master.mulesoft.org/nexus/service/local/rep
 RUN set -x   	\
                 && cd /opt \
 				&& unzip mule-standalone-4.4.0 \
-				&& mv mule-standalone-4.4.0 mule \
-				&& $MULE_HOME/bin/mule -installLicense $MULE_HOME/conf/$LICENSE_FILE
+				&& mv mule-standalone-4.4.0 mule 
+				#&& $MULE_HOME/bin/mule -installLicense $MULE_HOME/conf/$LICENSE_FILE
 
 WORKDIR $MULE_HOME
 
@@ -71,7 +71,7 @@ EXPOSE 8091
 
 # Start Mule runtime
 CMD echo "------ Start Mule runtime --------"
-ENTRYPOINT ["./bin/mule"]
+# ENTRYPOINT ["./bin/mule"]
 
 #CMD exec $MULE_HOME/bin/mule stop
 
