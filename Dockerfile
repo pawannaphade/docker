@@ -1,5 +1,5 @@
-#FROM  openjdk:11
-FROM java:8u111-jre
+FROM  openjdk:11
+#FROM java:8u111-jre
 
 ENV MULE_VERSION=4.4.0
 #Add mule runtime in Docker Container
