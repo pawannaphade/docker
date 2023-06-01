@@ -9,8 +9,8 @@ ENV MULE_HOME /opt/mule
 
 # Mule installation:
 # Download the distribution and store it into the folder
-# RUN wget -P /opt/ https://repository-master.mulesoft.org/nexus/service/local/repositories/releases/content/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip
-RUN wget -P /opt/ https://www.mulesoft.com/downloads/mule/latest/mule-ee-distribution-standalone-4.4.0-20230217.zip
+RUN wget -P /opt/ https://repository-master.mulesoft.org/nexus/service/local/repositories/releases/content/org/mule/distributions/mule-standalone/4.4.0/mule-standalone-4.4.0.zip
+#RUN wget -P /opt/ https://www.mulesoft.com/downloads/mule/latest/mule-ee-distribution-standalone-4.4.0-20230217.zip
 
 RUN set -x   	\
                 && cd /opt \
